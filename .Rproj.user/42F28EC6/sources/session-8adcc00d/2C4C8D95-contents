@@ -1,0 +1,57 @@
+---
+title: "multiWGCNA using data stored in ExperimentHub"
+output: html_document
+date: "2023-04-21"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Example data for multiWGCNA is stored in ExperimentHub. Access it like this:
+
+```{r}
+# Load expression matrix and metadata
+library(ExperimentHub)
+hub <- ExperimentHub()
+query(hub, c("multiWGCNAdata", "autism"))
+
+## download the autism data and metadata
+datExpr = hub[[1]]
+sampleTable = hub[[2]]
+```
+
+Now, proceed with the multiWGCNA analysis:
+
+```{r}
+# Check the data
+datExpr[1:5,1:5]
+sampleTable
+
+# Set the alpha level for statistical analyses and the soft power for network construction
+alphaLevel = 0.05
+softPower = 12
+
+# If your sample traits include numbers that you'd like to be considered numerical 
+# variables rather than categorical variables, set detectNumbers = TRUE
+detectNumbers = FALSE
+```
+
+We now perform network construction, module eigengene calculation, module-trait correlation. Let's use power = 12 since we used this in our manuscript (Tommasini and Fogel. BMC Bioinformatics. 2023.) for all the networks. 
+
+```{r, eval = FALSE}
+# Define our conditions for trait 1 (disease) and 2 (brain region)
+conditions1 = unique(sampleTable[,2])
+conditions2 = unique(sampleTable[,3])
+# Construct the combined networks and all the sub-networks (autism only, controls only, FC only, and TC only)
+# Same parameters as Tommasini and Fogel. BMC Bioinformatics
+myNetworks = constructNetworks(datExpr, sampleTable, conditions1, conditions2, 
+                                  networkType = "signed", TOMType = "unsigned", 
+                                  power = softPower, minModuleSize = 100, maxBlockSize = 25000,
+                                  reassignThreshold = 0, minKMEtoStay = 0, mergeCutHeight = 0,
+                                  numericLabels = TRUE, pamRespectsDendro = FALSE, 
+                                  deepSplit = 4, verbose = 3)
+```
+
+Carry on with the multiWGCNA analysis according to the generalWorkflow.Rmd vignette!
+
