@@ -1,0 +1,10 @@
+*.o
+*.so
+*.rda
+*.RData
+.DS_Store
+.Rproj.user
+.Rbuildignore
+.Rbuildignore
+.Rhistory
+multiWGCNAdata.Rproj
