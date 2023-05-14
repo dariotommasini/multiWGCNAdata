@@ -1,7 +1,11 @@
 ---
-title: "multiWGCNA using data stored in ExperimentHub"
-output: html_document
+title: "multiWGCNA data using Bioconductor's ExperimentHub"
 date: "2023-04-21"
+vignette: >
+  %\VignetteIndexEntry{multiWGCNA data using Bioconductor's ExperimentHub}
+  %\VignetteEngine{knitr::rmarkdown}
+output: 
+  BiocStyle::html_document
 ---
 
 ```{r setup, include=FALSE}
@@ -17,20 +21,29 @@ hub <- ExperimentHub()
 query(hub, c("multiWGCNAdata", "autism"))
 
 ## download the autism data and metadata
-datExpr = hub[[1]]
-sampleTable = hub[[2]]
+autism_se = hub[[3]]
 ```
 
 Now, proceed with the multiWGCNA analysis:
 
 ```{r}
+# Load multiWGCNA R package
+library(multiWGCNA)
+
+# Obtain metadata
+sampleTable = colData(autism_se)
+
+# Randomly sample 2000 genes from the expression matrix
+set.seed(1)
+autism_se = autism_se[sample(rownames(autism_se), 2000),]
+
 # Check the data
-datExpr[1:5,1:5]
+assays(autism_se)[[1]][1:5, 1:5]
 sampleTable
 
 # Set the alpha level for statistical analyses and the soft power for network construction
 alphaLevel = 0.05
-softPower = 12
+softPower = 10
 
 # If your sample traits include numbers that you'd like to be considered numerical 
 # variables rather than categorical variables, set detectNumbers = TRUE
