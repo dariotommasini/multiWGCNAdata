@@ -26,7 +26,7 @@ meta <- data.frame(
                   paste0("The metadata for the tau timecourse dataset (Castanho et al. Cell Rep. 2020)."),
                   paste0("The tau networks from Tommasini and Fogel, BMC Bioinformatics, 2023. derived from the tau timecourse data from Castanho et al. Cell Rep. 2020."), 
                   paste0("SummarizedExperiment object for the tau timecourse dataset (Castanho et al. Cell Rep. 2020).")),
-  BiocVersion = "3.12",
+  BiocVersion = "3.18",
   Genome = c(rep(NA, 3),
              rep("mm10", 8)),
   SourceType = rep("TXT", 11),
@@ -58,7 +58,7 @@ meta <- data.frame(
                          "tau_data.rda",
                          "tau_metadata.rda",
                          "tau_networks.rda",
-                         "tau_se")),
+                         "tau_se.rda")),
   Tags = ""
 )
 
