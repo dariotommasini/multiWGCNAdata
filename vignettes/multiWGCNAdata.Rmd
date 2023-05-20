@@ -1,9 +1,10 @@
 ---
-title: "multiWGCNA data using Bioconductor's ExperimentHub"
+title: "Loading multiWGCNA data using Bioconductor's ExperimentHub"
 date: "2023-04-21"
 vignette: >
-  %\VignetteIndexEntry{multiWGCNA data using Bioconductor's ExperimentHub}
+  %\VignetteIndexEntry{Loading data through ExperimentHub}
   %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
 output: 
   BiocStyle::html_document
 ---
@@ -18,10 +19,10 @@ Example data for multiWGCNA is stored in ExperimentHub. Access it like this:
 # Load expression matrix and metadata
 library(ExperimentHub)
 eh = ExperimentHub()
-query(eh, c("multiWGCNAdata"))
+eh_query = query(eh, c("multiWGCNAdata"))
 
 ## download the autism data and metadata
-autism_se = hub[[3]]
+autism_se = eh_query[["EH8219"]]
 ```
 
 Now, proceed with the multiWGCNA analysis:

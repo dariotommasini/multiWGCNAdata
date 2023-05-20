@@ -3,7 +3,7 @@
 \alias{multiWGCNAdata-package}
 \alias{multiWGCNAdata}
 
-\title{multiWGCNAdata available as R list objects}
+\title{multiWGCNAdata available as R objects}
 
 \description{
   Stores expression profiling data from experiments compatible with
@@ -16,13 +16,16 @@
 }
 
 \details{
-  See the vignette for examples of using these data in differential
-  gene expression analysis.
+  See the vignette for examples of using these data in analyses.
 
   browseVignettes("multiWGCNAdata")
 
-  Details of how these data were creates are in the scripts/ directory
+  Details of how these data were created are in the scripts/ directory
   of the source package.
+}
+
+\value{
+NA
 }
 
 \examples{
@@ -34,7 +37,7 @@ y <- query(hub, c("multiWGCNAdata", "astrocyte"))
 y
 z <- query(hub, c("multiWGCNAdata", "tau"))
 z
-\dontrun{
+\donttest{
 ## download resource
 autism_data = x[[1]]
 astrocyte_data = y[[1]]
