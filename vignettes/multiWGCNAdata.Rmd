@@ -17,8 +17,8 @@ Example data for multiWGCNA is stored in ExperimentHub. Access it like this:
 ```{r}
 # Load expression matrix and metadata
 library(ExperimentHub)
-hub <- ExperimentHub()
-query(hub, c("multiWGCNAdata", "autism"))
+eh = ExperimentHub()
+query(eh, c("multiWGCNAdata"))
 
 ## download the autism data and metadata
 autism_se = hub[[3]]
@@ -50,7 +50,7 @@ softPower = 10
 detectNumbers = FALSE
 ```
 
-We now perform network construction, module eigengene calculation, module-trait correlation. Let's use power = 12 since we used this in our manuscript (Tommasini and Fogel. BMC Bioinformatics. 2023.) for all the networks. 
+We now perform network construction, module eigengene calculation, module-trait correlation. 
 
 ```{r, eval = FALSE}
 # Define our conditions for trait 1 (disease) and 2 (brain region)
