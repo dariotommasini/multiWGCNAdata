@@ -23,4 +23,6 @@ Imports:
     utils
 Suggests: 
     knitr,
-    rmarkdown
+    multiWGCNA,
+    rmarkdown,
+    SummarizedExperiment
