@@ -1,9 +1,9 @@
 Package: multiWGCNAdata
 Type: Package
 Title: Data Package for multiWGCNA
-Version: 0.99.0
+Version: 0.99.1
 Authors@R: c(
-    person("Dario", "Tommasini", email="dtommasini@berkeley.edu", 
+    person("Dario", "Tommasini", email="dtommasini0@gmail.com", 
     role = c("aut","cre")))
 biocViews: ExperimentHub, ExpressionData, Homo_sapiens_Data, Mus_musculus_Data, 
     RNASeqData, MicroarrayData
