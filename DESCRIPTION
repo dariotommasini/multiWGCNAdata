@@ -1,10 +1,11 @@
 Package: multiWGCNAdata
 Type: Package
 Title: Data Package for multiWGCNA
-Version: 0.99.1
+Version: 0.99.2
 Authors@R: c(
     person("Dario", "Tommasini", email="dtommasini0@gmail.com", 
-    role = c("aut","cre")))
+      role = c("aut","cre"), 
+      comment = c(ORCID = "0000-0002-1214-6547")))
 biocViews: ExperimentHub, ExpressionData, Homo_sapiens_Data, Mus_musculus_Data, 
     RNASeqData, MicroarrayData
 Description: Stores expression profiling data from experiments compatible with
@@ -26,3 +27,4 @@ Suggests:
     multiWGCNA,
     rmarkdown,
     SummarizedExperiment
+RoxygenNote: 7.2.3

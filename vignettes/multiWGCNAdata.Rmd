@@ -59,7 +59,7 @@ conditions1 = unique(sampleTable[,2])
 conditions2 = unique(sampleTable[,3])
 # Construct the combined networks and all the sub-networks (autism only, controls only, FC only, and TC only)
 # Same parameters as Tommasini and Fogel. BMC Bioinformatics
-myNetworks = constructNetworks(datExpr, sampleTable, conditions1, conditions2, 
+myNetworks = constructNetworks(autism_se, sampleTable, conditions1, conditions2, 
                                   networkType = "signed", TOMType = "unsigned", 
                                   power = softPower, minModuleSize = 100, maxBlockSize = 25000,
                                   reassignThreshold = 0, minKMEtoStay = 0, mergeCutHeight = 0,
@@ -68,4 +68,8 @@ myNetworks = constructNetworks(datExpr, sampleTable, conditions1, conditions2,
 ```
 
 Carry on with the multiWGCNA analysis according to the generalWorkflow.Rmd vignette!
+
+```{r}
+sessionInfo()
+```
 

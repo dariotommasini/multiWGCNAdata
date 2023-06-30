@@ -12,7 +12,7 @@
   EAE and wildtype mice (GSE100329), and mouse RNA-seq data from
   tau pathology (rTg4510) and wildtype control mice (GSE125957).
   These data have been parsed into \code{list} objects and
-  are available in \code{ExperimentHub}.
+  are available in the \code{ExperimentHub}.
 }
 
 \details{
@@ -30,18 +30,10 @@ NA
 
 \examples{
 library(ExperimentHub)
-hub <- ExperimentHub()
-x <- query(hub, c("multiWGCNAdata", "autism"))
-x
-y <- query(hub, c("multiWGCNAdata", "astrocyte"))
-y
-z <- query(hub, c("multiWGCNAdata", "tau"))
-z
-\donttest{
-## download resource
-autism_data = x[[1]]
-astrocyte_data = y[[1]]
-tau_data = z[[1]]
-}}
+eh = ExperimentHub()
+eh_query = query(eh, c("multiWGCNAdata"))
+astrocyte_se = eh_query[["EH8223"]]
+astrocyte_se
+}
 
 \keyword{utilities}
