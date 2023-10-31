@@ -1,7 +1,7 @@
 Package: multiWGCNAdata
 Type: Package
 Title: Data Package for multiWGCNA
-Version: 0.99.2
+Version: 0.99.3
 Authors@R: c(
     person("Dario", "Tommasini", email="dtommasini0@gmail.com", 
       role = c("aut","cre"), 
@@ -23,6 +23,7 @@ Depends:
 Imports: 
     utils
 Suggests: 
+    BiocStyle,
     knitr,
     multiWGCNA,
     rmarkdown,
