@@ -1,28 +1,28 @@
 Package: multiWGCNAdata
 Type: Package
 Title: Data Package for multiWGCNA
-Version: 0.99.3
+Version: 1.1.1
 Authors@R: c(
-    person("Dario", "Tommasini", email="dtommasini0@gmail.com", 
-      role = c("aut","cre"), 
+    person("Dario", "Tommasini", email="dtommasini0@gmail.com",
+      role = c("aut","cre"),
       comment = c(ORCID = "0000-0002-1214-6547")))
-biocViews: ExperimentHub, ExpressionData, Homo_sapiens_Data, Mus_musculus_Data, 
+biocViews: ExperimentHub, ExpressionData, Homo_sapiens_Data, Mus_musculus_Data,
     RNASeqData, MicroarrayData
 Description: Stores expression profiling data from experiments compatible with
-    the multiWGCNA R package. This includes human postmortem microarray data 
-    from patients and controls (GSE28521), astrocyte Ribotag RNA-seq data from 
-    EAE and wildtype mice (GSE100329), and mouse RNA-seq data from 
-    tau pathology (rTg4510) and wildtype control mice (GSE125957). These data 
-    can be accessed using the ExperimentHub workflow (see multiWGCNA vignettes). 
+    the multiWGCNA R package. This includes human postmortem microarray data
+    from patients and controls (GSE28521), astrocyte Ribotag RNA-seq data from
+    EAE and wildtype mice (GSE100329), and mouse RNA-seq data from
+    tau pathology (rTg4510) and wildtype control mice (GSE125957). These data
+    can be accessed using the ExperimentHub workflow (see multiWGCNA vignettes).
 License: Artistic-2.0
 VignetteBuilder: knitr
 Encoding: UTF-8
 LazyData: false
-Depends: 
+Depends:
     ExperimentHub
-Imports: 
+Imports:
     utils
-Suggests: 
+Suggests:
     BiocStyle,
     knitr,
     multiWGCNA,
