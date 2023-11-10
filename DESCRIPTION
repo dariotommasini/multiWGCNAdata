@@ -1,7 +1,7 @@
 Package: multiWGCNAdata
 Type: Package
 Title: Data Package for multiWGCNA
-Version: 1.1.1
+Version: 1.0.1
 Authors@R: c(
     person("Dario", "Tommasini", email="dtommasini0@gmail.com",
       role = c("aut","cre"),
